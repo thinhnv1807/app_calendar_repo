@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>main_screen_qml/ScreenTemperature.qml</file>
+        <file>component_qml/BottomButton.qml</file>
+        <file>common_qml/G_Button.qml</file>
+        <file>common_qml/G_Image.qml</file>
+        <file>animation_qml/G_AnimationX.qml</file>
+        <file>animation_qml/G_AnimationOpacity.qml</file>
+        <file>animation_qml/G_AnimationY.qml</file>
+        <file>common_qml/G_BurHiden.qml</file>
+        <file>common_qml/G_Text_.qml</file>
+        <file>main_screen_qml/ScreenCalendar.qml</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image_app/img_scr_day.png</file>
+        <file>image_app/img_scr_day_temperature.png</file>
+        <file>image_app/img_scr_night.png</file>
+        <file>image_app/img_scr_night_temperature.png</file>
+    </qresource>
+</RCC>

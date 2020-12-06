@@ -1,4 +1,6 @@
-QT += quick
+#QT += quick
+QT += core network positioning qml quick
+requires(qtConfig(bearermanagement))
 
 CONFIG += c++11
 
@@ -14,8 +16,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+        appmodel.cpp \
+        calendarmodel.cpp \
         main.cpp \
-        screenmanage.cpp
+        screenmanage.cpp \
+        temperaturemodel.cpp
 
 RESOURCES += qml.qrc \
     img.qrc
@@ -47,5 +52,8 @@ ANDROID_ABIS = armeabi-v7a
 
 HEADERS += \
     appenum.h \
+    appmodel.h \
     appsource.h \
-    screenmanage.h
+    calendarmodel.h \
+    screenmanage.h \
+    temperaturemodel.h

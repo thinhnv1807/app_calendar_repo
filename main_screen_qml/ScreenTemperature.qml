@@ -23,11 +23,11 @@ import AppEnum 1.0
        }
     }
 
-//    G_Image{
-//        id: bgr_screen
-//        source: showScreenApp(ScreenManageApp.screen_index)
-//        anchors.centerIn: parent
-//    }
+    G_Image{
+        id: bgr_screen
+        source: showScreenApp(ScreenManageApp.screen_index)
+        anchors.centerIn: parent
+    }
 
 
     G_Text_ {
@@ -39,6 +39,7 @@ import AppEnum 1.0
         font.bold: true
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
+        font.pointSize: 18
     }
 
     G_Text_{
@@ -47,7 +48,7 @@ import AppEnum 1.0
         anchors.verticalCenter: parent.verticalCenter
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        anchors.verticalCenterOffset: -54
+        anchors.verticalCenterOffset: 0
         anchors.horizontalCenterOffset: 0
         anchors.horizontalCenter: parent.horizontalCenter
         font.pixelSize: 80
@@ -74,6 +75,6 @@ import AppEnum 1.0
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.75}D{i:3}
+    D{i:0;formeditorZoom:0.75}
 }
 ##^##*/

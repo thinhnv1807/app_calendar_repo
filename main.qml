@@ -36,8 +36,6 @@ Window {
                 name: "ready"
                 PropertyChanges { target: ready_screen; opacity: 1 }
                 PropertyChanges { target: loading_screen; opacity: 0 }
-
-
             }
         ]
 
@@ -87,8 +85,6 @@ Window {
             id: loading_screen
             height: parent.height
             width: parent.width
-
-
             G_Text_{
                 text: "loading please wait......"
                 color: "black"

@@ -119,6 +119,16 @@ QString WeatherData::temperature() const
     return m_temperature;
 }
 
+QString WeatherData::temperature_max() const
+{
+    return m_temperature_max;
+}
+
+QString WeatherData::temperature_min() const
+{
+    return m_temperature_min;
+}
+
 void WeatherData::setDayOfWeek(const QString &value)
 {
     m_dayOfWeek = value;
@@ -140,6 +150,18 @@ void WeatherData::setWeatherDescription(const QString &value)
 void WeatherData::setTemperature(const QString &value)
 {
     m_temperature = value;
+    emit dataChanged();
+}
+
+void WeatherData::setTemperature_max(const QString &value)
+{
+    m_temperature_max = value;
+    emit dataChanged();
+}
+
+void WeatherData::setTemperature_min(const QString &value)
+{
+    m_temperature_min = value;
     emit dataChanged();
 }
 
@@ -432,6 +454,10 @@ void AppModel::handleWeatherNetworkData(QNetworkReply *networkReply)
                 tempObject = val.toObject();
                 val = tempObject.value(QStringLiteral("temp"));
                 d->now.setTemperature(niceTemperatureString(val.toDouble()));
+                val = tempObject.value(QStringLiteral("temp_min"));
+                d->now.setTemperature_min(niceTemperatureString(val.toDouble()));
+                val = tempObject.value(QStringLiteral("temp_max"));
+                d->now.setTemperature_max(niceTemperatureString(val.toDouble()));
             }
         }
     }

@@ -23,7 +23,6 @@ Window {
         height: parent.height
         width: parent.width
 
-
         state: "loading"
 
         states: [
@@ -57,17 +56,18 @@ Window {
 
             ScreenTemperature{
                 id: tempareture
-                visible: window.is_tempareture
                 weatherCity: (model.hasValidCity ? model.city : "Unknown location")/* + (model.useGps ? " (GPS)" : "")*/
                 weatherDescription: model.hasValidCity ? model.weather.weatherDescription : "---"
                 weatherTempareture:model.hasValidCity ? model.weather.temperature : "---"
-                onVisibleChanged: if(window.is_tempareture){animation.start(); animationO.start()}
+                weatherTemparetureMax:model.hasValidCity ? model.weather.temperature_max : "---"
+                weatherTemparetureMin:model.hasValidCity ? model.weather.temperature_min : "---"
+                onOpacityChanged: if(window.is_tempareture){animation.start(); animationO.start()}
             }
 
             ScreenCalendar{
                 id: calendar
                 visible: window.is_calendar
-                onVisibleChanged: if(window.is_calendar){animation.start(); animationO.start()}
+                onOpacityChanged: if(window.is_calendar){animation.start(); animationO.start()}
             }
 
             G_AnimationX{

@@ -14,6 +14,10 @@ import AppEnum 1.0
     property string weatherCity        : "---"
     property string weatherDescription : "---"
     property string weatherTempareture : "---"
+    property string weatherTemparetureMax : "---"
+    property string weatherTemparetureMin : "---"
+
+
 
     G_Image{
         id: bgr_screen
@@ -48,6 +52,34 @@ import AppEnum 1.0
     }
 
     G_Text_{
+        id: tempareture_id_max
+        text: weatherTemparetureMax
+        anchors.verticalCenter: city_id.verticalCenter
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        font.family: "Arial"
+        font.bold: false
+        anchors.verticalCenterOffset: 100
+        anchors.horizontalCenterOffset: -80
+        anchors.horizontalCenter: tempareture_id.horizontalCenter
+        font.pixelSize: 20
+    }
+
+
+    G_Text_{
+        id: tempareture_id_min
+        text: weatherTemparetureMin
+        anchors.verticalCenter: tempareture_id.verticalCenter
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        anchors.horizontalCenterOffset: 80
+        anchors.horizontalCenter: tempareture_id.horizontalCenter
+        font.family: "Arial"
+        font.bold: false
+        font.pixelSize: 20
+    }
+
+    G_Text_{
         id: description_id
         text: weatherDescription
         anchors.verticalCenter: tempareture_id.verticalCenter
@@ -68,8 +100,4 @@ import AppEnum 1.0
 
 
 
-/*##^##
-Designer {
-    D{i:0;formeditorZoom:0.75}
-}
-##^##*/
+

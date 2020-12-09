@@ -73,7 +73,12 @@ class WeatherData : public QObject {
     Q_PROPERTY(QString temperature
                READ temperature WRITE setTemperature
                NOTIFY dataChanged)
-
+    Q_PROPERTY(QString temperature_max
+               READ temperature_max WRITE setTemperature_max
+               NOTIFY dataChanged)
+    Q_PROPERTY(QString temperature_min
+               READ temperature_min WRITE setTemperature_min
+               NOTIFY dataChanged)
 public:
     explicit WeatherData(QObject *parent = 0);
     WeatherData(const WeatherData &other);
@@ -82,21 +87,25 @@ public:
     QString weatherIcon() const;
     QString weatherDescription() const;
     QString temperature() const;
+    QString temperature_max() const;
+    QString temperature_min() const;
 
     void setDayOfWeek(const QString &value);
     void setWeatherIcon(const QString &value);
     void setWeatherDescription(const QString &value);
     void setTemperature(const QString &value);
+    void setTemperature_max(const QString &value);
+    void setTemperature_min(const QString &value);
 
 signals:
     void dataChanged();
-//! [0]
 private:
     QString m_dayOfWeek;
     QString m_weather;
     QString m_weatherDescription;
     QString m_temperature;
-//! [1]
+    QString m_temperature_max;
+    QString m_temperature_min;
 };
 //! [1]
 

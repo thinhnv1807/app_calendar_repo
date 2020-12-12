@@ -18,11 +18,13 @@ Window {
     property bool is_tempareture: index_screen === AppE.INDEX_SCREEN_MANAGE_TEMPERATURE_DAY || index_screen == AppE.INDEX_SCREEN_MANAGE_TEMPERATURE_NIGHT
     property bool is_calendar: index_screen === AppE.INDEX_SCREEN_MANAGE_CALENDAR_DAY || index_screen == AppE.INDEX_SCREEN_MANAGE_CALENDAR_NIGHT
 
-    Item{
+    Rectangle{
         id: root_screen
         height: parent.height
         width: parent.width
-
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.horizontalCenter: parent.horizontalCenter
+        color: "black"
         state: "loading"
 
         states: [
@@ -81,16 +83,8 @@ Window {
             }
         }
 
-        Rectangle{
+        ScreenLoading{
             id: loading_screen
-            height: parent.height
-            width: parent.width
-            color: "black"
-            G_Text_{
-                text: "Đang tải dữ liệu..."
-                color: "white"
-                anchors.centerIn: parent
-            }
         }
 
     }

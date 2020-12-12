@@ -69,6 +69,19 @@ import WeatherInfo 1.0
         font.pixelSize: 20
     }
 
+    Rectangle{
+        id: icon_big_id
+        width:  200
+        height: 200
+        anchors.centerIn: root
+        G_Text_{
+            id: icon_big_id_text
+            text: model1.weather.weatherIcon
+            anchors.centerIn: parent
+            color: "black"
+        }
+    }
+
 
     Row{
         id: forcast_id

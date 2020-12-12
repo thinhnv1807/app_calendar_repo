@@ -24,16 +24,6 @@ import AppEnumCalendar 1.0
         anchors.centerIn: parent
     }
 
-//    MouseArea{
-//        anchors.fill: parent
-//        onPressed: Qt.quit()
-//    }
-
-//    BottomButton{
-//        id: btn_bottom
-//        anchors.top: root.top
-//        anchors.horizontalCenter: root.horizontalCenter
-//    }
 
     Component.onCompleted: {
         console.log("thinh", CALENDAR_WEEK_ENUM.INDEX_CALENDAR_WEEK_MO)

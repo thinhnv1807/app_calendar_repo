@@ -8,5 +8,6 @@ Text {
     font.family: "Times New Roman"
     verticalAlignment: Text.AlignVCenter
     horizontalAlignment: Text.AlignHCenter
+    color: "white"
 }
 

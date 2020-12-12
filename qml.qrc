@@ -12,5 +12,6 @@
         <file>common_qml/G_Text_.qml</file>
         <file>main_screen_qml/ScreenCalendar.qml</file>
         <file>component_qml/Forecast.qml</file>
+        <file>main_screen_qml/ScreenLoading.qml</file>
     </qresource>
 </RCC>

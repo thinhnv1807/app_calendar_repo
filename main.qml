@@ -18,7 +18,7 @@ Window {
     property bool is_tempareture: index_screen === AppE.INDEX_SCREEN_MANAGE_TEMPERATURE_DAY || index_screen == AppE.INDEX_SCREEN_MANAGE_TEMPERATURE_NIGHT
     property bool is_calendar: index_screen === AppE.INDEX_SCREEN_MANAGE_CALENDAR_DAY || index_screen == AppE.INDEX_SCREEN_MANAGE_CALENDAR_NIGHT
 
-    Rectangle{
+    Item{
         id: root_screen
         height: parent.height
         width: parent.width
@@ -42,7 +42,7 @@ Window {
         AppModel {
             id: model
             onReadyChanged: {
-                if (model.ready)
+                if (model.ready && model.useGps)
                     root_screen.state = "ready"
                 else
                     root_screen.state =  "loading"
@@ -81,13 +81,14 @@ Window {
             }
         }
 
-        Item{
+        Rectangle{
             id: loading_screen
             height: parent.height
             width: parent.width
+            color: "black"
             G_Text_{
-                text: "loading please wait......"
-                color: "black"
+                text: "Đang tải dữ liệu..."
+                color: "white"
                 anchors.centerIn: parent
             }
         }

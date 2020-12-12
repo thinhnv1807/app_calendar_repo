@@ -31,4 +31,32 @@ public:
     };
 
 };
+
+class WeatherEnum: public QObject
+{
+    Q_OBJECT
+    Q_ENUMS(Weather)
+public:
+
+    enum Weather{
+        INDEX_WEATHER_01D,
+        INDEX_WEATHER_02D,
+        INDEX_WEATHER_03D,
+        INDEX_WEATHER_04D,
+        INDEX_WEATHER_09D,
+        INDEX_WEATHER_10D,
+        INDEX_WEATHER_11D,
+        INDEX_WEATHER_13D,
+        INDEX_WEATHER_50D,
+        INDEX_WEATHER_01N,
+        INDEX_WEATHER_02N,
+        INDEX_WEATHER_03N,
+        INDEX_WEATHER_04N,
+        INDEX_WEATHER_09N,
+        INDEX_WEATHER_10N,
+        INDEX_WEATHER_11N,
+        INDEX_WEATHER_13N,
+        INDEX_WEATHER_50N,
+    };
+};
 #endif // APPENUM_H

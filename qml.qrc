@@ -11,5 +11,6 @@
         <file>common_qml/G_BurHiden.qml</file>
         <file>common_qml/G_Text_.qml</file>
         <file>main_screen_qml/ScreenCalendar.qml</file>
+        <file>component_qml/Forecast.qml</file>
     </qresource>
 </RCC>

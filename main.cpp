@@ -38,6 +38,8 @@ int main(int argc, char *argv[])
     qRegisterMetaType<WeatherData>();
     qmlRegisterUncreatableType<AppEnum>("AppEnum", 1, 0, "AppE", "Not creatable as it is an enum type");
     qmlRegisterUncreatableType<AppEnumCalendarWeek>("AppEnumCalendar", 1, 0, "CALENDAR_WEEK_ENUM", "Not creatable as it is an enum type");
+    qmlRegisterUncreatableType<WeatherEnum>("WeatherEnum", 1, 0, "WeatherEnum", "Not creatable as it is an enum type");
+
     Constext->setContextProperty("ScreenManageApp", &ScreenManageApp);
     Constext->setContextProperty("AppSource", &appsource);
     const QUrl url(QStringLiteral("qrc:/main.qml"));

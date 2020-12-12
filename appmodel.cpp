@@ -510,7 +510,7 @@ void AppModel::handleForecastNetworkData(QNetworkReply *networkReply)
             jv = jo.value(QStringLiteral("min"));
             data.clear();
             data += niceTemperatureString(jv.toDouble());
-            data += QChar('/');
+            data += QChar('-');
             jv = jo.value(QStringLiteral("max"));
             data += niceTemperatureString(jv.toDouble());
             forecastEntry->setTemperature(data);

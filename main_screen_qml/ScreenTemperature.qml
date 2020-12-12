@@ -6,6 +6,7 @@ import QtMultimedia 5.12
 import QtQuick.Timeline 1.0
 import AppEnumCalendar 1.0
 import AppEnum 1.0
+import WeatherInfo 1.0
 
   Item {
     id: root
@@ -17,7 +18,9 @@ import AppEnum 1.0
     property string weatherTemparetureMax : "---"
     property string weatherTemparetureMin : "---"
 
-
+    AppModel {
+        id: model1
+    }
 
     G_Image{
         id: bgr_screen
@@ -51,33 +54,6 @@ import AppEnum 1.0
         font.pixelSize: 70
     }
 
-    G_Text_{
-        id: tempareture_id_max
-        text: weatherTemparetureMax
-        anchors.verticalCenter: city_id.verticalCenter
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-        font.family: "Arial"
-        font.bold: false
-        anchors.verticalCenterOffset: 100
-        anchors.horizontalCenterOffset: -80
-        anchors.horizontalCenter: tempareture_id.horizontalCenter
-        font.pixelSize: 20
-    }
-
-
-    G_Text_{
-        id: tempareture_id_min
-        text: weatherTemparetureMin
-        anchors.verticalCenter: tempareture_id.verticalCenter
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-        anchors.horizontalCenterOffset: 80
-        anchors.horizontalCenter: tempareture_id.horizontalCenter
-        font.family: "Arial"
-        font.bold: false
-        font.pixelSize: 20
-    }
 
     G_Text_{
         id: description_id
@@ -91,6 +67,59 @@ import AppEnum 1.0
         anchors.verticalCenterOffset: 59
         anchors.horizontalCenter: tempareture_id.horizontalCenter
         font.pixelSize: 20
+    }
+
+
+    Row{
+        id: forcast_id
+        spacing: 8
+        anchors.top: root.top
+        anchors.topMargin: root.height - 180
+        anchors.horizontalCenter: root.horizontalCenter
+        height: 150
+        width: forcast_01.width*4 + spacing*3
+
+        Forecast{
+            id: forcast_01
+            dayOfWeek: (model1.hasValidWeather ?
+                            model1.forecast[0].dayOfWeek : "??")
+            tempareture: (model1.hasValidWeather ?
+                              model1.forecast[0].temperature : "??/??")
+            icon:  (model1.hasValidWeather ?
+                        model1.forecast[0].weatherIcon : "01d")
+        }
+
+        Forecast{
+            id: forcast_02
+            dayOfWeek: (model1.hasValidWeather ?
+                            model1.forecast[1].dayOfWeek : "??")
+            tempareture: (model1.hasValidWeather ?
+                              model1.forecast[1].temperature : "??/??")
+            icon:  (model1.hasValidWeather ?
+                        model1.forecast[1].weatherIcon : "01d")
+        }
+
+        Forecast{
+            id: forcast_03
+            dayOfWeek: (model1.hasValidWeather ?
+                            model1.forecast[2].dayOfWeek : "??")
+            tempareture: (model1.hasValidWeather ?
+                              model1.forecast[2].temperature : "??/??")
+            icon:  (model1.hasValidWeather ?
+                        model1.forecast[2].weatherIcon : "01d")
+        }
+
+        Forecast{
+            id: forcast_04
+            dayOfWeek: (model1.hasValidWeather ?
+                            model1.forecast[3].dayOfWeek : "??")
+            tempareture: (model1.hasValidWeather ?
+                              model1.forecast[3].temperature : "??/??")
+            icon:  (model1.hasValidWeather ?
+                        model1.forecast[3].weatherIcon : "01d")
+        }
+
+
     }
 
     Component.onCompleted: {

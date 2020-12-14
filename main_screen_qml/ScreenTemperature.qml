@@ -18,6 +18,20 @@ import WeatherInfo 1.0
     property string weatherTemparetureMax : "---"
     property string weatherTemparetureMin : "---"
 
+    function getIconWeather(data){
+
+        switch(data[0] + data[1]){
+        case "01": return AppSource.img_sun_icon      // sun or moon
+        case "02": return AppSource.img_clould_icon     // + sun or moon
+        case "03": return AppSource.img_clould_icon     //  nothing
+        case "04": return AppSource.img_cluold_big_icon // nothing
+        case "09": return AppSource.img_rain_icon       // nothing
+        case "10": return AppSource.img_rain_icon       // + sun or moon
+        case "11": return AppSource.img_thunder_icon
+        case "50": return AppSource.img_mist_icon       //nothing
+        }
+    }
+
     AppModel {
         id: model1
     }
@@ -26,6 +40,12 @@ import WeatherInfo 1.0
         id: bgr_screen
         source: AppSource.img_bgr_app_day()
         anchors.centerIn: parent
+    }
+
+    Rectangle{
+        anchors.fill: parent
+        color: "black"
+        opacity: 0.3
     }
 
     G_Text_ {
@@ -69,17 +89,24 @@ import WeatherInfo 1.0
         font.pixelSize: 20
     }
 
-    Rectangle{
+
+    G_Image{
+        id: icon_big_day_night_id
+        width:  80
+        height: (sourceSize.height)/(sourceSize.width/80)
+        anchors.verticalCenter: icon_big_id.top
+        anchors.verticalCenterOffset: -10
+        anchors.right: icon_big_id.right
+        anchors.rightMargin: -10
+        source:model1.weather.weatherIcon[2] === "d" ? AppSource.img_sun_icon : AppSource.img_moon_icon
+    }
+
+    G_Image{
         id: icon_big_id
-        width:  200
-        height: 200
+        width:  100
+        height: (sourceSize.height)/(sourceSize.width/100)
         anchors.centerIn: root
-        G_Text_{
-            id: icon_big_id_text
-            text: model1.weather.weatherIcon
-            anchors.centerIn: parent
-            color: "black"
-        }
+        source:root.getIconWeather(model1.weather.weatherIcon)
     }
 
 

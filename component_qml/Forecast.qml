@@ -13,6 +13,22 @@ Item {
     property string  tempareture: ""
     property string  icon: ""
 
+    property bool isDay: false
+
+    function getIconWeather(){
+
+        switch(icon[0] + icon[1]){
+        case "01": return AppSource.img_sun_icon      // sun or moon
+        case "02": return AppSource.img_clould_icon     // + sun or moon
+        case "03": return AppSource.img_clould_icon     //  nothing
+        case "04": return AppSource.img_cluold_big_icon // nothing
+        case "09": return AppSource.img_rain_icon       // nothing
+        case "10": return AppSource.img_rain_icon       // + sun or moon
+        case "11": return AppSource.img_thunder_icon
+        case "50": return AppSource.img_mist_icon       //nothing
+        }
+    }
+
 
 
     Rectangle{
@@ -34,12 +50,23 @@ Item {
         text: dayOfWeek
     }
 
-    G_Text_{
-        id: icon_id
-        anchors.verticalCenter: tempareture_id.verticalCenter
-        anchors.verticalCenterOffset: 60
+    G_Image{
+        id: icon_id_day_night
+        height: sourceSize.height/(sourceSize.width/15)
+        width: 15
+        anchors.verticalCenter: icon_id_weather.top
+        anchors.right:icon_id_weather.right
+        source: icon[2] === "d" ? AppSource.img_sun_icon : AppSource.img_moon_icon
+    }
+
+    G_Image{
+        id: icon_id_weather
+        height: sourceSize.height/(sourceSize.width/30)
+        width: 30
+        anchors.top: tempareture_id.verticalCenter
+        anchors.topMargin: 40
         anchors.horizontalCenter: parent.horizontalCenter
-        text: icon
+        source: forcast.getIconWeather()
     }
 
     G_Text_{

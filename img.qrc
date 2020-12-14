@@ -6,5 +6,12 @@
         <file>image_app/img_scr_night_temperature.png</file>
         <file>image_app/img_bgr_app_day.png</file>
         <file>image_app/logo.png</file>
+        <file>image_app/icon/clould_icon.png</file>
+        <file>image_app/icon/cluold_big_icon.png</file>
+        <file>image_app/icon/moon_icon.png</file>
+        <file>image_app/icon/rain_icon.png</file>
+        <file>image_app/icon/sun_icon.png</file>
+        <file>image_app/icon/thunder_icon.png</file>
+        <file>image_app/icon/mist_icon.png</file>
     </qresource>
 </RCC>

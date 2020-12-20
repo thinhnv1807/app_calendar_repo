@@ -6,14 +6,14 @@
 class AppSource : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString img_clould_icon READ img_clould_icon)
-    Q_PROPERTY(QString img_cluold_big_icon READ img_cluold_big_icon)
-    Q_PROPERTY(QString img_moon_icon READ img_moon_icon)
+    Q_PROPERTY(QString img_clould_icon READ img_clould_icon          )
+    Q_PROPERTY(QString img_cluold_big_icon READ img_cluold_big_icon  )
+    Q_PROPERTY(QString img_moon_icon READ img_moon_icon              )
 
-    Q_PROPERTY(QString img_rain_icon READ img_rain_icon)
-    Q_PROPERTY(QString img_sun_icon READ img_sun_icon)
-    Q_PROPERTY(QString img_thunder_icon READ img_thunder_icon)
-    Q_PROPERTY(QString img_mist_icon READ img_mist_icon)
+    Q_PROPERTY(QString img_rain_icon READ img_rain_icon              )
+    Q_PROPERTY(QString img_sun_icon READ img_sun_icon                )
+    Q_PROPERTY(QString img_thunder_icon READ img_thunder_icon        )
+    Q_PROPERTY(QString img_mist_icon READ img_mist_icon              )
 
 
 

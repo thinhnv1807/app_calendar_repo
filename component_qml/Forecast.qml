@@ -18,7 +18,7 @@ Item {
     function getIconWeather(){
 
         switch(icon[0] + icon[1]){
-        case "01": return AppSource.img_sun_icon      // sun or moon
+        case "01": return (data[2] === "d")? AppSource.img_sun_icon : AppSource.img_moon_icon    // sun or moon
         case "02": return AppSource.img_clould_icon     // + sun or moon
         case "03": return AppSource.img_clould_icon     //  nothing
         case "04": return AppSource.img_cluold_big_icon // nothing
@@ -56,6 +56,7 @@ Item {
         width: 15
         anchors.verticalCenter: icon_id_weather.top
         anchors.right:icon_id_weather.right
+        visible: (icon !== "01d") && (icon !== "01n")
         source: icon[2] === "d" ? AppSource.img_sun_icon : AppSource.img_moon_icon
     }
 

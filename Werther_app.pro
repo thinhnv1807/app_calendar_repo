@@ -43,7 +43,8 @@ DISTFILES += \
     android/gradle/wrapper/gradle-wrapper.properties \
     android/gradlew \
     android/gradlew.bat \
-    android/res/values/libs.xml
+    android/res/values/libs.xml \
+    image_app/img_bgr_app_night.png
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 android: include(C:/Users/LENOVO/Downloads/OPENSSL/android_openssl-master/android_openssl-master/openssl.pri)

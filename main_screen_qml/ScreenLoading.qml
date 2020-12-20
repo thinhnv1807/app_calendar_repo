@@ -15,7 +15,7 @@ import WeatherInfo 1.0
 
     G_Image{
         id: logo_id
-        source: AppSource.img_logo()
+        source: AppSource.img_logo
         anchors.centerIn: parent
     }
 

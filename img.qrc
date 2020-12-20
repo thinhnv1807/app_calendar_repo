@@ -13,5 +13,6 @@
         <file>image_app/icon/sun_icon.png</file>
         <file>image_app/icon/thunder_icon.png</file>
         <file>image_app/icon/mist_icon.png</file>
+        <file>image_app/img_bgr_app_night.png</file>
     </qresource>
 </RCC>

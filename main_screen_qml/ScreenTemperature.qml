@@ -21,7 +21,7 @@ import WeatherInfo 1.0
     function getIconWeather(data){
 
         switch(data[0] + data[1]){
-        case "01": return AppSource.img_sun_icon      // sun or moon
+        case "01": return (data[2] === "d")  ? AppSource.img_sun_icon : AppSource.img_moon_icon      // sun or moon
         case "02": return AppSource.img_clould_icon     // + sun or moon
         case "03": return AppSource.img_clould_icon     //  nothing
         case "04": return AppSource.img_cluold_big_icon // nothing
@@ -38,7 +38,7 @@ import WeatherInfo 1.0
 
     G_Image{
         id: bgr_screen
-        source: AppSource.img_bgr_app_day()
+        source:(data[2] === "d")  ? AppSource.img_bgr_app_day : AppSource.img_bgr_app_night
         anchors.centerIn: parent
     }
 
@@ -98,6 +98,7 @@ import WeatherInfo 1.0
         anchors.verticalCenterOffset: -10
         anchors.right: icon_big_id.right
         anchors.rightMargin: -10
+        visible: ( model1.weather.weatherIcon  !== "01d") && (model1.weather.weatherIcon !== "01n")
         source:model1.weather.weatherIcon[2] === "d" ? AppSource.img_sun_icon : AppSource.img_moon_icon
     }
 

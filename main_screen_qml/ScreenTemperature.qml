@@ -38,7 +38,7 @@ import WeatherInfo 1.0
 
     G_Image{
         id: bgr_screen
-        source:(data[2] === "d")  ? AppSource.img_bgr_app_day : AppSource.img_bgr_app_night
+        source:(model1.weather.weatherIcon[2] === "d")  ? AppSource.img_bgr_app_day : AppSource.img_bgr_app_night
         anchors.centerIn: parent
     }
 

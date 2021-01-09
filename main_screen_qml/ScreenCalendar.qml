@@ -15,7 +15,7 @@ import AppEnumCalendar 1.0
        switch(data){
        case AppE.INDEX_SCREEN_MANAGE_CALENDAR_DAY: return AppSource.img_scr_day()
        case AppE.INDEX_SCREEN_MANAGE_CALENDAR_NIGHT: return AppSource.img_scr_night()
-       default:return AppSource.img_scr_day()
+       default:return AppSource.img_scr_day
        }
     }
 
